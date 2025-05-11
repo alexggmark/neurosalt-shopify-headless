@@ -1,6 +1,8 @@
-import { shopifyFetch } from "../client";
+import { shopifyFetch } from '../client';
+import { GetProductsQuery } from '../generated-types';
+import { gql } from 'graphql-request';
 
-const query = `
+const query = gql`
   query GetProducts($first: Int = 10) {
     products(first: $first) {
       edges {
@@ -26,6 +28,6 @@ const query = `
 `;
 
 export async function getProducts() {
-  const res = await shopifyFetch({ query });
+  const res = await shopifyFetch<GetProductsQuery>({ query });
   return res.products;
 }

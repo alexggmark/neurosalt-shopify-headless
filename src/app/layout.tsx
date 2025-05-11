@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { getProducts } from '@/lib/shopify';
+import { GetProductsQuery } from '@/lib/shopify/generated-types'
 import "./globals.css";
 
 const geistSans = Geist({
@@ -23,14 +24,17 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const products = await getProducts();
 
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <h1 className="text-xl font-bold text-red-600">{data.shop.name}</h1>
-        <p className="text-gray-600 text-sm">{data.shop.description}</p>
+        {products.edges.map(({ node }) => (
+          <p key={node.id}>{node.title}</p>
+        ))}
+        
         {children}
       </body>
     </html>
