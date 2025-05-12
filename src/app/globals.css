@@ -17,8 +17,28 @@ body {
   color: var(--foreground);
 }
 
+.page-width {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .page-width {
+    padding: 0 2rem;
+  }
+}
+
+.page-width--narrow {
+  max-width: 1060px;
+}
+
 @theme {
   --font-sans: var(--font-dm-sans), sans-serif;
 
-  --color-foreground: #ff0000;
+  --color-brand-grey: #F0F0F0;
+
+  --text-2xl: 3.2rem;
+
+  --tracking-tight: -2.9px;
 }

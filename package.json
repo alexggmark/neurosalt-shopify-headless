@@ -10,6 +10,7 @@
     "codegen": "dotenv -e .env.local -- graphql-codegen --config codegen.ts"
   },
   "dependencies": {
+    "framer-motion": "^12.11.0",
     "next": "15.3.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
