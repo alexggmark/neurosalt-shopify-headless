@@ -5,7 +5,7 @@ const config: CodegenConfig = {
   overwrite: true,
   schema: [
     {
-      'https://neurosalt-headless.myshopify.com/api/2024-04/graphql.json': {
+      "https://neurosalt-headless.myshopify.com/api/2024-04/graphql.json": {
         headers: {
           'Content-Type': 'application/json',
           'X-Shopify-Storefront-Access-Token': process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN!,
