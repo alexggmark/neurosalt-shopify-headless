@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "codegen": "dotenv -e .env.local -- graphql-codegen --config codegen.ts"
+    "codegen:shopify": "graphql-codegen --config codegen.shopify.ts",
+    "codegen:dato": "graphql-codegen --config codegen.dato.ts",
+    "codegen": "npm run codegen:shopify && npm run codegen:dato"
   },
   "dependencies": {
     "framer-motion": "^12.11.0",

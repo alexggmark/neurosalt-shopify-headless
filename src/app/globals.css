@@ -1,8 +1,70 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: var(--font-dm-sans), sans-serif;
+
+  --color-brand-grey: #F0F0F0;
+
+  --text-base: 16px;
+  --text-lg: 19.2px;
+  --text-xl: 22px;
+  --text-2xl: 26px;
+
+  --text-3xl: 40px;
+  --text-4xl: 60px;
+
+  --tracking-tighter: -0.08em;
+  --tracking-tight: -0.04em;
+
+  --leading-1: 1;
+  --leading-1\.25: 1.25;
+  --leading-1\.5: 1.5;
+  --leading-1\.75: 1.75;
+  --leading-2: 2;
+}
+
+@layer components {
+  .font-heading-2xl {
+    @apply text-4xl font-medium tracking-tighter leading-1.25;
+  }
+
+  .font-heading-xl {
+    @apply text-3xl font-medium tracking-tighter leading-1.25;
+  }
+
+  .font-heading-lg {
+    @apply text-2xl font-medium tracking-tight leading-1.25;
+  }
+
+  .font-heading-base {
+    @apply text-xl font-medium tracking-tight leading-1.25;
+  }
+
+  .font-body-lg {
+    @apply text-lg leading-1.5;
+  }
+
+  .font-body-link {
+    @apply text-base font-medium leading-1.5 underline hover:no-underline underline-offset-8;
+  }
+
+  .link-underline {
+    @apply relative inline-block text-base font-medium leading-1.5;
+
+    &::after {
+      content: '';
+      @apply absolute w-full left-0 -bottom-1 bg-current transition-all duration-200 h-[1px];
+    }
+
+    &:hover::after {
+      @apply left-1/2 w-0;
+    }
+  }
+}
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #000000;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,27 +80,17 @@ body {
 }
 
 .page-width {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
 @media screen and (min-width: 768px) {
   .page-width {
-    padding: 0 2rem;
+    padding: 0 3rem;
   }
 }
 
 .page-width--narrow {
-  max-width: 1060px;
-}
-
-@theme {
-  --font-sans: var(--font-dm-sans), sans-serif;
-
-  --color-brand-grey: #F0F0F0;
-
-  --text-2xl: 3.2rem;
-
-  --tracking-tight: -2.9px;
+  max-width: 1160px;
 }
