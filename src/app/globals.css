@@ -11,6 +11,7 @@
   --text-2xl: 26px;
 
   --text-3xl: 40px;
+  --text-2\.5xl: 48px;
   --text-4xl: 60px;
 
   --tracking-tighter: -0.08em;
@@ -24,8 +25,12 @@
 }
 
 @layer components {
-  .font-heading-2xl {
+  .font-heading-3xl {
     @apply text-4xl font-medium tracking-tighter leading-1.25;
+  }
+
+  .font-heading-2xl {
+    @apply text-2.5xl font-medium tracking-tighter leading-1.25;
   }
 
   .font-heading-xl {
@@ -42,6 +47,10 @@
 
   .font-body-lg {
     @apply text-lg leading-1.5;
+  }
+
+  .font-body-base {
+    @apply text-base leading-1.5;
   }
 
   .font-body-link {
@@ -93,4 +102,14 @@ body {
 
 .page-width--narrow {
   max-width: 1160px;
+}
+
+.page-width--overflow-right {
+  padding: 0 0 0 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .page-width--overflow-right {
+    padding: 0 0 0 3rem;
+  }
 }
