@@ -5,7 +5,7 @@ import Button from "../ui/Button";
 export default function HeroBanner() {
   return (
     <div className="page-width">
-      <div className="rounded-2xl flex overflow-hidden min-h-96">
+      <div className="rounded-3xl flex overflow-hidden min-h-96">
         <div className="w-1/2 bg-black flex flex-col justify-center items-center md:py-40">
           <div className="text-white text-center max-w-[400px] flex flex-col items-center">
             <h3 className="text-[18px] mb-4 capitalize">Gentle and safe</h3>

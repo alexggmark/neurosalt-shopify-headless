@@ -42,7 +42,7 @@ export default function ProductFaq() {
 
   return (
     <div className="page-width">
-      <div className="rounded-2xl flex overflow-hidden py-16 px-8 bg-black text-white">
+      <div className="rounded-3xl flex overflow-hidden py-16 px-8 bg-black text-white">
         <div className="w-1/2 flex items-start justify-center">
           <Image src="/images/transparent-image-placeholder.png" width={400} height={400} alt="test" className="" />
         </div>

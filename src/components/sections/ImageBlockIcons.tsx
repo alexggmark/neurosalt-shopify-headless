@@ -4,7 +4,7 @@ import Button from "../ui/Button";
 export default function ImageBlockIcons() {
   return (
     <div className="page-width">
-      <div className="rounded-2xl flex overflow-hidden">
+      <div className="rounded-3xl flex overflow-hidden">
         <div className="w-1/2 bg-slate-500 relative">
           <Image src="/images/placeholder.png" width={600} height={600} alt="test" className="absolute w-full h-full object-cover" />
         </div>

@@ -14,7 +14,7 @@ type Ingredients = {
 const ingredients: Ingredients[] = [
   {
     title: "Pea protein",
-    description: "This is pea protein, it's jolly nice, and I think you'll like it.",
+    description: "This is pea protein, it's jolly nice, and I think you'll like it. This is pea protein, it's jolly nice, and I think you'll like it.",
     imgSrc: "/images/placeholder.png"
   },
   {
@@ -24,7 +24,7 @@ const ingredients: Ingredients[] = [
   },
   {
     title: "Pea protein",
-    description: "This is pea protein, it's jolly nice, and I think you'll like it.",
+    description: "This is pea protein, it's jolly nice, and I think you'll like it. This is pea protein, it's jolly nice, and I think you'll like it. This is pea protein, it's jolly nice, and I think you'll like it.",
     imgSrc: "/images/placeholder.png"
   },
   {
