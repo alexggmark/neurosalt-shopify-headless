@@ -1,5 +1,5 @@
 import { shopifyFetch } from '../client';
-import { GetProductsQuery } from '../generated-types';
+import { GetProductsQuery } from '../graphql-types';
 import { gql } from 'graphql-request';
 
 const query = gql`

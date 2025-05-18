@@ -14,7 +14,7 @@ export async function datoFetch<T>({
       Authorization: `Bearer ${process.env.DATOCMS_API_TOKEN || ''}`,
     },
     body: JSON.stringify({ query, variables }),
-    next: { revalidate: 60 }, // ISR / caching
+    next: { revalidate: 60 },
   });
 
   const json = await res.json();

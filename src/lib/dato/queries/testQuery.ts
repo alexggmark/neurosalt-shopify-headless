@@ -1,10 +1,10 @@
 import { datoFetch } from '../client';
-import { TestQuery, TestQueryVariables } from '../generated-types';
+import { TestQueryQuery } from '../graphql-types';
 import { gql } from 'graphql-request';
 
 const query = gql`
-  query TestQuery($first: Int = 4)  {
-    allTestcontents(first: $first) {
+  query TestQuery {
+    allTestcontents {
       id
       title
     }
@@ -12,9 +12,8 @@ const query = gql`
 `;
 
 export async function getTestQuery() {
-  const res = await datoFetch<TestQuery>({
+  const res = await datoFetch<TestQueryQuery>({
     query,
-    variables: { first: 4 } satisfies TestQueryVariables,
   });
 
   return res.allTestcontents;

@@ -1,8 +1,3 @@
-export const SHOPIFY_DOMAIN = process.env.SHOPIFY_STORE_DOMAIN;
-export const SHOPIFY_STOREFRONT_ACCESS_TOKEN = process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN;
-
-// lib/shopify/client.ts
-
 export async function shopifyFetch<T>({
   query,
   variables,

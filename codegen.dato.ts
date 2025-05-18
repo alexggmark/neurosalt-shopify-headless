@@ -5,16 +5,16 @@ const config: CodegenConfig = {
   overwrite: true,
   schema: [
     {
-      'https://neurosalt-headless.myshopify.com/api/2024-07/graphql.json': {
+      'https://graphql.datocms.com/': {
         headers: {
-          'X-Shopify-Storefront-Access-Token': process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN!,
+          Authorization: `Bearer ${process.env.DATOCMS_API_TOKEN}`,
         },
       },
     }
   ],
-  documents: 'src/lib/shopify/**/*.{ts,tsx}',
+  documents: 'src/lib/dato/**/*.{ts,tsx}',
   generates: {
-    'src/lib/shopify/graphql-types.ts': {
+    'src/lib/dato/graphql-types.ts': {
       plugins: ['typescript', 'typescript-operations'],
     },
   },

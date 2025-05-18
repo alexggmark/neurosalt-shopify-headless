@@ -1,1 +1,1 @@
-// export * from './queries/getProducts';
+export * from './queries/testQuery';
