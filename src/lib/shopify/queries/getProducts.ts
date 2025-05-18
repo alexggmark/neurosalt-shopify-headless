@@ -3,7 +3,7 @@ import { GetProductsQuery } from '../graphql-types';
 import { gql } from 'graphql-request';
 
 const query = gql`
-  query GetProducts($first: Int = 10) {
+  query GetProducts($first: Int = 8) {
     products(first: $first) {
       edges {
         node {
@@ -12,11 +12,15 @@ const query = gql`
           handle
           description
           featuredImage {
-            url
+            url(transform: {maxWidth: 400})
             altText
           }
           priceRange {
             minVariantPrice {
+              amount
+              currencyCode
+            }
+            maxVariantPrice {
               amount
               currencyCode
             }

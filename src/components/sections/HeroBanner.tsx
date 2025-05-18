@@ -2,6 +2,26 @@ import Image from "next/image";
 import CartTrigger from "../cart/CartTrigger";
 import Button from "../ui/Button";
 
+type Item = {
+  id: string;
+  imgSrc: string;
+  topTitle: string;
+  title: string;
+  description: string;
+  ctaText: string;
+  url: string;
+};
+
+const items: Item = {
+  id: '1',
+  imgSrc: '/images/placeholder-light.png',
+  topTitle: 'The Vacation Shop',
+  title: 'Care for Your Beauty',
+  description: 'We create safe products that really work and are designed to make you feel good',
+  ctaText: 'Shop Skincare',
+  url: '/products/smart-hydration',
+};
+
 export default function HeroBanner() {
   return (
     <div className="page-width">

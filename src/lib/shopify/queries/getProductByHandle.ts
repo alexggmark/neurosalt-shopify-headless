@@ -7,16 +7,42 @@ const query = gql`
     productByHandle(handle: $handle) {
       id
       title
-      description
       handle
+      description
       featuredImage {
-        url
+        url(transform: {maxWidth: 800})
         altText
       }
       priceRange {
         minVariantPrice {
           amount
           currencyCode
+        }
+        maxVariantPrice {
+          amount
+          currencyCode
+        }
+      }
+      images(first: 10) {
+        edges {
+          node {
+            url(transform: {maxWidth: 1000})
+            altText
+          }
+        }
+      }
+      variants(first: 10) {
+        edges {
+          node {
+            availableForSale
+            id
+            sku
+            title
+            price {
+              amount
+              currencyCode
+            }
+          }
         }
       }
     }
@@ -29,5 +55,5 @@ export async function getShopifyProduct(handle: string) {
     variables: { handle },
   });
 
-  return res.productByHandle;
+  return res;
 }

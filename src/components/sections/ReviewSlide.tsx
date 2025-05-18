@@ -97,7 +97,7 @@ export default function ReviewSlide() {
                 <div className="flex flex-col justify-end py-7 px-4">
                   <p className="text-lg font-medium tracking-tight mb-0.5">{review.author}</p>
                   <StarRating rating={review.rating} />
-                  <p className="font-body-lg mt-3">{review.content}</p>
+                  <p className="font-body-base mt-3">{review.content}</p>
                 </div>
               </div>
             ))}

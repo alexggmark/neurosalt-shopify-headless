@@ -4,6 +4,7 @@ import { getProducts } from "@/lib/shopify";
 import HeroBanner from "@/components/sections/HeroBanner";
 import ValuePropStrip from "@/components/sections/ValuePropStrip";
 import CollectionGrid from "@/components/sections/CollectionGrid";
+import AuthorityBox from "@/components/sections/AuthorityBox";
 import ProductGrid from "@/components/sections/ProductGrid";
 import CarouselSlide from "@/components/sections/CarouselSlide";
 import ImageBlockIcons from "@/components/sections/ImageBlockIcons";
@@ -37,7 +38,6 @@ export default async function Home() {
 
   return (
     <>
-
       {/* Example of doing a block loop from DatoCMS data: */}
       {/* {pageData.content.map((block, index) => {
         switch (block.__typename) {
@@ -51,44 +51,12 @@ export default async function Home() {
             return null;
         }
       })} */}
-
-
-      <ProductGrid data={shopifyData} />
-
-      {data.map((item) => (
-        <li key={item.id} className="p-2 bg-gray-100 rounded">
-          {item.title}
-        </li>
-      ))}
-
-      {shopifyData.products.edges.map(({ node }) => (
-        <li key={node.id} className="p-2 bg-gray-100 rounded">
-          <Link href={`/products/${node.handle}`} className="link-underline-inverted">
-            {node.handle}
-          </Link>
-        </li>
-      ))}
       
       <HeroBanner />
       <ValuePropStrip />
       <CollectionGrid />
-
-
-      <div className="page-width">
-        <div className="rounded-3xl bg-black">
-          <div className="flex flex-col justify-center items-center md:py-24">
-            <div className="text-white text-center max-w-[400px] flex flex-col items-center">
-              <h3 className="text-[18px] mb-4 capitalize">Gentle and safe</h3>
-              <div className="flex gap-4">
-                <CartTrigger>
-                  <Button buttonText="Open Cart"></Button>
-                </CartTrigger>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      <AuthorityBox />
+      <ProductGrid data={shopifyData} />
       <CarouselSlide />
       <ImageBlockIcons />
       <IngredientsDropdown />

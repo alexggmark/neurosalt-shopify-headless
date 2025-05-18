@@ -5,11 +5,11 @@ export default function StarRating({ rating }: { rating: number }) {
   const percentage = (roundedRating / 5) * 100;
 
   return (
-    <div className="relative flex h-5 items-center">
+    <div className="relative flex h-4 items-center">
       {/* Empty stars */}
       <div className="flex">
         {Array.from({ length: 5 }).map((_, i) => (
-          <div key={i} className="relative w-5 h-5 inline-block">
+          <div key={i} className="relative w-4 h-4 inline-block">
             <Image
               src="/images/star.svg"
               fill
@@ -28,7 +28,7 @@ export default function StarRating({ rating }: { rating: number }) {
         }}
       >
         {Array.from({ length: 5 }).map((_, i) => (
-          <div key={i} className="relative w-5 h-5 inline-block">
+          <div key={i} className="relative w-4 h-4 inline-block">
             <Image
               src="/images/star.svg"
               fill

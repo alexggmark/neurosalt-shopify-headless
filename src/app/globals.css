@@ -4,6 +4,7 @@
   --font-sans: var(--font-dm-sans), sans-serif;
 
   --color-brand-grey: #F0F0F0;
+  --color-brand-grey-dark: #E2E2E2;
 
   --text-base: 16px;
   --text-lg: 19.2px;
@@ -62,11 +63,24 @@
 
     &::after {
       content: '';
-      @apply absolute w-full left-0 -bottom-1 bg-current transition-all duration-200 h-[1px];
+      @apply absolute w-full right-0 -bottom-1 bg-current transition-all duration-200 h-[1px];
     }
 
     &:hover::after {
-      @apply left-1/2 w-0;
+      @apply right-0 w-0;
+    }
+  }
+
+  .link-underline {
+    @apply relative inline-block text-base font-medium leading-1.5;
+
+    &::after {
+      content: '';
+      @apply absolute w-0 left-0 bottom-0 bg-current transition-all duration-200 h-[1px];
+    }
+
+    &:hover::after {
+      @apply left-0 w-full;
     }
   }
 }
