@@ -9,7 +9,7 @@ export default function CollectionGrid() {
         <h2 className="font-heading-xl mb-10">
           Because you need time for yourself. Blend beauty in you
         </h2>
-        <Link href="/posts/first-post" className="link-underline">
+        <Link href="/posts/first-post" className="link-underline-inverted">
           Shop All Products
         </Link>
       </div>

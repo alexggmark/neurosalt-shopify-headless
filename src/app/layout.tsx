@@ -3,6 +3,10 @@ import { DM_Sans } from "next/font/google";
 import ClientProviders from "../components/layout/ClientProviders";
 import "./globals.css";
 
+import AnnouncementBar from "@/components/layout/AnnouncementBar";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
   subsets: ["latin"],
@@ -24,7 +28,10 @@ export default async function RootLayout({
     <html lang="en" className={dmSans.variable}>
       <body className="antialiased font-sans">
         <ClientProviders>
+          <AnnouncementBar />
+          <Header />
           {children}
+          <Footer />
         </ClientProviders>
       </body>
     </html>

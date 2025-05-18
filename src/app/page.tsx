@@ -1,23 +1,20 @@
 import { getTestQuery } from "@/lib/dato"
 import { getProducts } from "@/lib/shopify";
 
-import AnnouncementBar from "@/components/layout/AnnouncementBar";
-import Header from "@/components/layout/Header";
 import HeroBanner from "@/components/sections/HeroBanner";
 import ValuePropStrip from "@/components/sections/ValuePropStrip";
 import CollectionGrid from "@/components/sections/CollectionGrid";
+import ProductGrid from "@/components/sections/ProductGrid";
 import CarouselSlide from "@/components/sections/CarouselSlide";
 import ImageBlockIcons from "@/components/sections/ImageBlockIcons";
 import IngredientsDropdown from "@/components/sections/IngredientsDropdown";
 import ProductFaq from "@/components/sections/ProductFaq";
 import LinkGrid from "@/components/sections/LinkGrid";
 import ReviewSlide from "@/components/sections/ReviewSlide";
-import Footer from "@/components/layout/Footer";
 
 import CartTrigger from "@/components/cart/CartTrigger";
 import Button from "@/components/ui/Button";
 
-// import QuickShopTrigger from "@/components/quick-shop/QuickShopTrigger";
 import Link from "next/link";
 import Image from 'next/image';
 
@@ -55,20 +52,23 @@ export default async function Home() {
         }
       })} */}
 
+
+      <ProductGrid data={shopifyData} />
+
       {data.map((item) => (
         <li key={item.id} className="p-2 bg-gray-100 rounded">
           {item.title}
         </li>
       ))}
 
-      {shopifyData.edges.map(({ node }) => (
+      {shopifyData.products.edges.map(({ node }) => (
         <li key={node.id} className="p-2 bg-gray-100 rounded">
-          {node.title}
+          <Link href={`/products/${node.handle}`} className="link-underline-inverted">
+            {node.handle}
+          </Link>
         </li>
       ))}
-
-      <AnnouncementBar />
-      <Header />
+      
       <HeroBanner />
       <ValuePropStrip />
       <CollectionGrid />
@@ -89,14 +89,12 @@ export default async function Home() {
         </div>
       </div>
 
-
       <CarouselSlide />
       <ImageBlockIcons />
       <IngredientsDropdown />
       <ReviewSlide />
       <ProductFaq />
       <LinkGrid />
-      <Footer />
 
     </>
   );

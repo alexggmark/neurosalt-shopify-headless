@@ -8175,6 +8175,13 @@ export enum WeightUnit {
   Pounds = 'POUNDS'
 }
 
+export type GetProductByHandleQueryVariables = Exact<{
+  handle: Scalars['String']['input'];
+}>;
+
+
+export type GetProductByHandleQuery = { __typename?: 'QueryRoot', productByHandle?: { __typename?: 'Product', id: string, title: string, description: string, handle: string, featuredImage?: { __typename?: 'Image', url: any, altText?: string | null } | null, priceRange: { __typename?: 'ProductPriceRange', minVariantPrice: { __typename?: 'MoneyV2', amount: any, currencyCode: CurrencyCode } } } | null };
+
 export type GetProductsQueryVariables = Exact<{
   first?: InputMaybe<Scalars['Int']['input']>;
 }>;

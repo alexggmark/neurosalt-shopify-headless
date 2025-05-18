@@ -57,7 +57,7 @@
     @apply text-base font-medium leading-1.5 underline hover:no-underline underline-offset-8;
   }
 
-  .link-underline {
+  .link-underline-inverted {
     @apply relative inline-block text-base font-medium leading-1.5;
 
     &::after {

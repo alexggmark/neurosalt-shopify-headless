@@ -8,6 +8,15 @@ const nextConfig: NextConfig = {
     DATOCMS_API_TOKEN: process.env.DATOCMS_API_TOKEN,
     DATOCMS_API_URL: process.env.DATOCMS_API_URL
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.shopify.com',
+        pathname: '/**',
+      },
+    ],
+  },
 };
 
 export default nextConfig;

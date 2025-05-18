@@ -52,7 +52,7 @@ export default function LinkGrid() {
         <h2 className="font-heading-xl mb-10">
           {data.title}
         </h2>
-        <Link href={data.url} className="link-underline">
+        <Link href={data.url} className="link-underline-inverted">
           {data.ctaText}
         </Link>
       </div>

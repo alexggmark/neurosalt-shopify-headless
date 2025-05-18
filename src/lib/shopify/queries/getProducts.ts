@@ -29,5 +29,5 @@ const query = gql`
 
 export async function getProducts() {
   const res = await shopifyFetch<GetProductsQuery>({ query });
-  return res.products;
+  return res;
 }
