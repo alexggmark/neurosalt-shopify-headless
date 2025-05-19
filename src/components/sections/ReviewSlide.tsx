@@ -65,10 +65,10 @@ export default function ReviewSlide() {
             Over 2,000 Happy reviews
           </h2>
           <div className="flex justify-between max-w-24 w-full">
-            <button className="w-10 h-10 bg-white rounded-full border border-gray-200 flex items-center justify-center">
+            <button className="w-10 h-10 cursor-pointer bg-white rounded-full border border-gray-200 hover:border-gray-500 flex items-center justify-center">
               <Image src="/images/chevron.svg" width={22} height={22} alt="test" className="rotate-180" />
             </button>
-            <button className="w-10 h-10 bg-white rounded-full border border-gray-200 flex items-center justify-center">
+            <button className="w-10 h-10 cursor-pointer bg-white rounded-full border border-gray-200 hover:border-gray-500 flex items-center justify-center">
               <Image src="/images/chevron.svg" width={22} height={22} alt="test" />
             </button>
           </div>

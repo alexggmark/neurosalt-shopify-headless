@@ -49,16 +49,18 @@ export default function IngredientsDropdown() {
   return (
     <div className="page-width">
       <div className="rounded-2xl flex overflow-hidden py-16">
-        <div className="w-1/2 pr-28 pt-4">
-          <h1 className="font-heading-3xl mb-6">Made with the world’s most powerful superfood</h1>
-          <p className="font-body-lg mb-10">We carefully select nutrient-packed ingredients to support your whole body, from your muscles to your metabolism.</p>
+        <div className="w-1/2">
+          <div className="max-w-96">
+            <h1 className="font-heading-3xl mb-6">Made with the world’s most powerful superfood</h1>
+            <p className="font-body-lg mb-10">We carefully select nutrient-packed ingredients to support your whole body, from your muscles to your metabolism.</p>
+          </div>
         </div>
         <div className="w-1/2">
           {ingredients.map((data, index) => (
-            <div key={index}>
+            <div key={index} className={`hover:bg-brand-grey border ${openIndex === index ? 'border-black' : 'border-gray-200'} hover:border-black rounded-2xl py-2 pl-2 pr-4 mb-3`}>
               <button
                 onClick={() => toggle(index)}
-                className="w-full text-left py-2 pl-2 pr-4 flex items-center justify-between hover:bg-brand-grey rounded-2xl mb-3 cursor-pointer"
+                className="w-full text-left flex items-center justify-between cursor-pointer"
               >
                 <div className="flex items-center gap-4">
                   <Image
@@ -91,9 +93,9 @@ export default function IngredientsDropdown() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.2, ease: 'easeOut' }}
-                      className="px-4 pb-4 pt-2"
+                      className="pb-6 pt-4 pl-20 border-t border-black/20"
                     >
-                      <p className="text-base pl-[calc(60px+1rem)]">
+                      <p className="text-base">
                         {data.description}
                       </p>
                     </motion.div>

@@ -38,6 +38,7 @@ const query = gql`
             id
             sku
             title
+            quantityAvailable
             price {
               amount
               currencyCode

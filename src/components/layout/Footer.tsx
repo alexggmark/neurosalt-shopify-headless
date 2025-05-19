@@ -23,20 +23,20 @@ export default function Footer() {
               </div>
               <div className="min-w-40">
                 <h3 className="font-heading-base mb-4">Shop</h3>
-                <ul className="list-none flex flex-col justify-center gap-5 grow font-medium">
-                  <li className="link-underline">Shop</li>
-                  <li className="link-underline">Collections</li>
-                  <li className="link-underline">About Us</li>
-                  <li className="link-underline">Contact</li>
+                <ul className="list-none flex flex-col items-start gap-5 grow font-medium">
+                  <Link href="/"><li className="link-underline">Shop</li></Link>
+                  <Link href="/"><li className="link-underline">Collections</li></Link>
+                  <Link href="/"><li className="link-underline">About Us</li></Link>
+                  <Link href="/"><li className="link-underline">Contact</li></Link>
                 </ul>
               </div>
               <div className="min-w-40">
                 <h3 className="font-heading-base mb-4">Customer care</h3>
-                <ul className="list-none flex flex-col item-start justify-start gap-5 grow font-medium">
-                  <li className="link-underline">Shop</li>
-                  <li className="link-underline">Collections</li>
-                  <li className="link-underline">About Us</li>
-                  <li className="link-underline">Contact</li>
+                <ul className="list-none flex flex-col items-start gap-5 grow font-medium">
+                  <Link href="/"><li className="link-underline">Shop</li></Link>
+                  <Link href="/"><li className="link-underline">Collections</li></Link>
+                  <Link href="/"><li className="link-underline">About Us</li></Link>
+                  <Link href="/"><li className="link-underline">Contact</li></Link>
                 </ul>
               </div>
             </div>

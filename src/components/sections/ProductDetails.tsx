@@ -15,7 +15,7 @@ type Props = {
 
 export default function ProductDetails({ data }: Props) {
   const variants = data.variants.edges.map(edge => edge.node);
-  const [selectedVariant, setSelectedVariant] = useState(variants[1]);
+  const [selectedVariant, setSelectedVariant] = useState(variants[0]);
   const [quantitySelect, setQuantitySelect] = useState(0);
 
   console.log(data);
@@ -44,6 +44,23 @@ export default function ProductDetails({ data }: Props) {
 
           <p className="mb-4">{data.description}</p>
 
+          <div className="mb-4">
+            {selectedVariant.quantityAvailable ? (
+              <p className="flex flex-row gap-1 items-center text-emerald-500 text-sm">
+                <span className="relative flex size-2 mr-1">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75"></span>
+                  <span className="relative inline-flex size-2 rounded-full bg-emerald-600"></span>
+                </span>
+                <span className="">{selectedVariant.quantityAvailable}</span>
+                <span className="">in stock</span>
+              </p>
+            ) : (
+              <p className="flex flex-row gap-1 items-center text-red-700 text-sm">
+                <span className="">0 in stock</span>
+              </p>
+            )}
+          </div>
+
           {variants.length > 1 && (
             <div className="mt-4 mb-6">
               <label className="block mb-2"><span className="font-bold">Variant:</span> <span>{selectedVariant.title}</span></label>
@@ -53,7 +70,7 @@ export default function ProductDetails({ data }: Props) {
                     key={variant.id}
                     type="button"
                     onClick={() => setSelectedVariant(variant)}
-                    className={`px-4 py-2 rounded-full border text-base cursor-pointer
+                    className={`px-3 py-2 rounded-full border text-base cursor-pointer
                       ${
                         selectedVariant.id === variant.id
                           ? 'bg-black text-white border-black'
@@ -84,9 +101,9 @@ export default function ProductDetails({ data }: Props) {
                 <Image src="/images/black-plus.svg" width={22} height={22} alt="test" />
               </button>
             </div>
-            <div className="w-full flex items-center">
-              <CartTrigger>
-                <Button buttonText="Open Cart" invert></Button>
+            <div className="w-full flex items-center justify-betwen">
+              <CartTrigger className="flex w-full">
+                <Button buttonText="Open Cart" invert fullWidth></Button>
               </CartTrigger>
             </div>
           </div>
