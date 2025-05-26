@@ -1,24 +1,27 @@
 import Link from "next/link";
 import CollectionCard from "../ui/CollectionCard";
 import Button from "../ui/Button";
+import { CollectionGridBlock } from "@/lib/dato/types";
 
-export default function CollectionGrid() {
+type Props = {
+  data: CollectionGridBlock;
+};
+
+export default function CollectionGrid({ data }: Props) {
   return (
     <div className="page-width page-width--narrow">
       <div className="text-center max-w-[600px] mx-auto py-12">
         <h2 className="font-heading-xl mb-10">
-          Because you need time for yourself. Blend beauty in you
+          {data.title}
         </h2>
-        <Link href="/posts/first-post" className="link-underline-inverted">
-          Shop All Products
+        <Link href={data.ctaLink ? data.ctaLink : '/404'} className="link-underline-inverted">
+          {data.ctaText}
         </Link>
       </div>
 
       <div className="grid md:grid-cols-3 grid-cols-2 gap-6">
-        {new Array(6).fill('').map((_, index) => {
-          return (
-            <CollectionCard key={index}></CollectionCard>
-          );
+        {data.collectiontile.map((block, index) => {
+          return <CollectionCard key={index} data={block}></CollectionCard>
         })}
       </div>
 

@@ -1,26 +1,28 @@
 import { GetProductsQuery } from "@/lib/shopify/graphql-types";
+import { ProductGridBlock } from "@/lib/dato/types";
 import ProductCard from "../ui/ProductCard";
 import Link from "next/link";
 
 type Props = {
-  data: GetProductsQuery;
+  shopifyData: GetProductsQuery;
+  data: ProductGridBlock;
 }
 
-export default function ProductGrid({ data }: Props) {
+export default function ProductGrid({ shopifyData, data }: Props) {
   return (
     <div className="page-width">
       <div className="flex justify-between items-center pt-24 pb-7">
         <h2 className="font-heading-xl">
-          What’s hot
+          {data.title}
         </h2>
         <div className="flex justify-end">
-          <Link href="/posts/first-post" className="link-underline-inverted">
-            Shop All Products
+          <Link href={data.ctaLink ? data.ctaLink : "/posts/first-post"} className="link-underline-inverted">
+            {data.ctaText}
           </Link>
         </div>
       </div>
       <div className="grid grid-cols-4 gap-4">
-        {data.products.edges.map((item, index) => (
+        {shopifyData.products.edges.slice(0, data.limit ? data.limit : 0).map((item, index) => (
           <ProductCard data={item} key={index} />
         ))}
       </div>

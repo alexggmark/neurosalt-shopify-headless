@@ -22,15 +22,183 @@ export type Scalars = {
   UploadId: { input: any; output: any; }
 };
 
+/** Block of type AuthorityStrip (authoritystrip) */
+export type AuthoritystripRecord = RecordInterface & {
+  __typename?: 'AuthoritystripRecord';
+  _createdAt: Scalars['DateTime']['output'];
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
+  _isValid: Scalars['BooleanType']['output'];
+  _modelApiKey: Scalars['String']['output'];
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>;
+  _status: ItemStatus;
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _updatedAt: Scalars['DateTime']['output'];
+  content: Array<AuthoritystriptextRecord>;
+  id: Scalars['ItemId']['output'];
+};
+
+
+/** Block of type AuthorityStrip (authoritystrip) */
+export type AuthoritystripRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
+};
+
+/** Block of type AuthorityStripText (authoritystriptext) */
+export type AuthoritystriptextRecord = RecordInterface & {
+  __typename?: 'AuthoritystriptextRecord';
+  _createdAt: Scalars['DateTime']['output'];
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
+  _isValid: Scalars['BooleanType']['output'];
+  _modelApiKey: Scalars['String']['output'];
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>;
+  _status: ItemStatus;
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _updatedAt: Scalars['DateTime']['output'];
+  id: Scalars['ItemId']['output'];
+  image?: Maybe<FileField>;
+  text?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** Block of type AuthorityStripText (authoritystriptext) */
+export type AuthoritystriptextRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
+};
+
 /** Specifies how to filter Boolean fields */
 export type BooleanFilter = {
   /** Search for records with an exact match */
   eq?: InputMaybe<Scalars['BooleanType']['input']>;
 };
 
+/** Block of type CarouselSlide (carouselslide) */
+export type CarouselslideRecord = RecordInterface & {
+  __typename?: 'CarouselslideRecord';
+  _createdAt: Scalars['DateTime']['output'];
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
+  _isValid: Scalars['BooleanType']['output'];
+  _modelApiKey: Scalars['String']['output'];
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>;
+  _status: ItemStatus;
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _updatedAt: Scalars['DateTime']['output'];
+  backgroundimage?: Maybe<FileField>;
+  ctaLink?: Maybe<Scalars['String']['output']>;
+  ctaText?: Maybe<Scalars['String']['output']>;
+  id: Scalars['ItemId']['output'];
+  maintitle?: Maybe<Scalars['String']['output']>;
+  text?: Maybe<Scalars['String']['output']>;
+  toptitle?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** Block of type CarouselSlide (carouselslide) */
+export type CarouselslideRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
+};
+
+/** Block of type CarouselSlideContainer (carouselslidecontainer) */
+export type CarouselslidecontainerRecord = RecordInterface & {
+  __typename?: 'CarouselslidecontainerRecord';
+  _createdAt: Scalars['DateTime']['output'];
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
+  _isValid: Scalars['BooleanType']['output'];
+  _modelApiKey: Scalars['String']['output'];
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>;
+  _status: ItemStatus;
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _updatedAt: Scalars['DateTime']['output'];
+  id: Scalars['ItemId']['output'];
+  slide: Array<CarouselslideRecord>;
+  title?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** Block of type CarouselSlideContainer (carouselslidecontainer) */
+export type CarouselslidecontainerRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
+};
+
 export type CollectionMetadata = {
   __typename?: 'CollectionMetadata';
   count: Scalars['IntType']['output'];
+};
+
+/** Block of type CollectionGrid (collectiongrid) */
+export type CollectiongridRecord = RecordInterface & {
+  __typename?: 'CollectiongridRecord';
+  _createdAt: Scalars['DateTime']['output'];
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
+  _isValid: Scalars['BooleanType']['output'];
+  _modelApiKey: Scalars['String']['output'];
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>;
+  _status: ItemStatus;
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _updatedAt: Scalars['DateTime']['output'];
+  collectiontile: Array<CollectiontileRecord>;
+  ctaLink?: Maybe<Scalars['String']['output']>;
+  ctaText?: Maybe<Scalars['String']['output']>;
+  id: Scalars['ItemId']['output'];
+  title?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** Block of type CollectionGrid (collectiongrid) */
+export type CollectiongridRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
+};
+
+/** Block of type CollectionTile (collectiontile) */
+export type CollectiontileRecord = RecordInterface & {
+  __typename?: 'CollectiontileRecord';
+  _createdAt: Scalars['DateTime']['output'];
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
+  _isValid: Scalars['BooleanType']['output'];
+  _modelApiKey: Scalars['String']['output'];
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>;
+  _status: ItemStatus;
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _updatedAt: Scalars['DateTime']['output'];
+  id: Scalars['ItemId']['output'];
+  image?: Maybe<FileField>;
+  link?: Maybe<Scalars['String']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** Block of type CollectionTile (collectiontile) */
+export type CollectiontileRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
 };
 
 export enum ColorBucketType {
@@ -276,71 +444,6 @@ export type HerobannerRecord = RecordInterface & {
 
 /** Block of type HeroBanner (herobanner) */
 export type HerobannerRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>;
-};
-
-export type HomepageModelFilter = {
-  AND?: InputMaybe<Array<InputMaybe<HomepageModelFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<HomepageModelFilter>>>;
-  _createdAt?: InputMaybe<CreatedAtFilter>;
-  _firstPublishedAt?: InputMaybe<PublishedAtFilter>;
-  _isValid?: InputMaybe<BooleanFilter>;
-  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>;
-  _publishedAt?: InputMaybe<PublishedAtFilter>;
-  _status?: InputMaybe<StatusFilter>;
-  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>;
-  _updatedAt?: InputMaybe<UpdatedAtFilter>;
-  id?: InputMaybe<ItemIdFilter>;
-  slug?: InputMaybe<StringFilter>;
-};
-
-export enum HomepageModelOrderBy {
-  CreatedAtAsc = '_createdAt_ASC',
-  CreatedAtDesc = '_createdAt_DESC',
-  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
-  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
-  IsValidAsc = '_isValid_ASC',
-  IsValidDesc = '_isValid_DESC',
-  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
-  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
-  PublishedAtAsc = '_publishedAt_ASC',
-  PublishedAtDesc = '_publishedAt_DESC',
-  StatusAsc = '_status_ASC',
-  StatusDesc = '_status_DESC',
-  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
-  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
-  UpdatedAtAsc = '_updatedAt_ASC',
-  UpdatedAtDesc = '_updatedAt_DESC',
-  IdAsc = 'id_ASC',
-  IdDesc = 'id_DESC',
-  SlugAsc = 'slug_ASC',
-  SlugDesc = 'slug_DESC'
-}
-
-/** Record of type Homepage (homepage) */
-export type HomepageRecord = RecordInterface & {
-  __typename?: 'HomepageRecord';
-  _createdAt: Scalars['DateTime']['output'];
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars['String']['output']>;
-  _firstPublishedAt: Scalars['DateTime']['output'];
-  _isValid: Scalars['BooleanType']['output'];
-  _modelApiKey: Scalars['String']['output'];
-  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _publishedAt: Scalars['DateTime']['output'];
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>;
-  _status: ItemStatus;
-  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _updatedAt: Scalars['DateTime']['output'];
-  content: Array<Scalars['String']['output']>;
-  id: Scalars['ItemId']['output'];
-  slug?: Maybe<Scalars['String']['output']>;
-};
-
-
-/** Record of type Homepage (homepage) */
-export type HomepageRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
 };
 
@@ -2176,6 +2279,103 @@ export type OrientationFilter = {
   neq?: InputMaybe<UploadOrientation>;
 };
 
+export type PageModelContentField = AuthoritystripRecord | CarouselslidecontainerRecord | CollectiongridRecord | HerobannerRecord | ProductgridRecord | ValuepropstripRecord;
+
+export type PageModelFilter = {
+  AND?: InputMaybe<Array<InputMaybe<PageModelFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<PageModelFilter>>>;
+  _createdAt?: InputMaybe<CreatedAtFilter>;
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>;
+  _isValid?: InputMaybe<BooleanFilter>;
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>;
+  _publishedAt?: InputMaybe<PublishedAtFilter>;
+  _status?: InputMaybe<StatusFilter>;
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>;
+  _updatedAt?: InputMaybe<UpdatedAtFilter>;
+  id?: InputMaybe<ItemIdFilter>;
+  slug?: InputMaybe<StringFilter>;
+};
+
+export enum PageModelOrderBy {
+  CreatedAtAsc = '_createdAt_ASC',
+  CreatedAtDesc = '_createdAt_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  UpdatedAtAsc = '_updatedAt_ASC',
+  UpdatedAtDesc = '_updatedAt_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  SlugAsc = 'slug_ASC',
+  SlugDesc = 'slug_DESC'
+}
+
+/** Record of type page (page) */
+export type PageRecord = RecordInterface & {
+  __typename?: 'PageRecord';
+  _createdAt: Scalars['DateTime']['output'];
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
+  _isValid: Scalars['BooleanType']['output'];
+  _modelApiKey: Scalars['String']['output'];
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>;
+  _status: ItemStatus;
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _updatedAt: Scalars['DateTime']['output'];
+  content: Array<PageModelContentField>;
+  id: Scalars['ItemId']['output'];
+  slug?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** Record of type page (page) */
+export type PageRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
+};
+
+/** Block of type ProductGrid (productgrid) */
+export type ProductgridRecord = RecordInterface & {
+  __typename?: 'ProductgridRecord';
+  _createdAt: Scalars['DateTime']['output'];
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
+  _isValid: Scalars['BooleanType']['output'];
+  _modelApiKey: Scalars['String']['output'];
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>;
+  _status: ItemStatus;
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _updatedAt: Scalars['DateTime']['output'];
+  collectionHandle?: Maybe<Scalars['String']['output']>;
+  ctaLink?: Maybe<Scalars['String']['output']>;
+  ctaText?: Maybe<Scalars['String']['output']>;
+  id: Scalars['ItemId']['output'];
+  limit?: Maybe<Scalars['IntType']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** Block of type ProductGrid (productgrid) */
+export type ProductgridRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
+};
+
 /** Specifies how to filter by publication datetime */
 export type PublishedAtFilter = {
   /** Filter records with a value that's within the specified minute range. Seconds and milliseconds are truncated from the argument. */
@@ -2198,7 +2398,7 @@ export type PublishedAtFilter = {
 export type Query = {
   __typename?: 'Query';
   /** Returns meta information regarding a record collection */
-  _allHomepagesMeta: CollectionMetadata;
+  _allPagesMeta: CollectionMetadata;
   /** Returns meta information regarding a record collection */
   _allTestcontentsMeta: CollectionMetadata;
   /** Returns meta information regarding an assets collection */
@@ -2206,13 +2406,13 @@ export type Query = {
   /** Returns the single instance record */
   _site: Site;
   /** Returns a collection of records */
-  allHomepages: Array<HomepageRecord>;
+  allPages: Array<PageRecord>;
   /** Returns a collection of records */
   allTestcontents: Array<TestcontentRecord>;
   /** Returns a collection of assets */
   allUploads: Array<FileField>;
   /** Returns a specific record */
-  homepage?: Maybe<HomepageRecord>;
+  page?: Maybe<PageRecord>;
   /** Returns a specific record */
   testcontent?: Maybe<TestcontentRecord>;
   /** Returns a specific asset */
@@ -2221,8 +2421,8 @@ export type Query = {
 
 
 /** The query root for this schema */
-export type Query_AllHomepagesMetaArgs = {
-  filter?: InputMaybe<HomepageModelFilter>;
+export type Query_AllPagesMetaArgs = {
+  filter?: InputMaybe<PageModelFilter>;
   locale?: InputMaybe<SiteLocale>;
 };
 
@@ -2249,12 +2449,12 @@ export type Query_SiteArgs = {
 
 
 /** The query root for this schema */
-export type QueryAllHomepagesArgs = {
+export type QueryAllPagesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  filter?: InputMaybe<HomepageModelFilter>;
+  filter?: InputMaybe<PageModelFilter>;
   first?: InputMaybe<Scalars['IntType']['input']>;
   locale?: InputMaybe<SiteLocale>;
-  orderBy?: InputMaybe<Array<InputMaybe<HomepageModelOrderBy>>>;
+  orderBy?: InputMaybe<Array<InputMaybe<PageModelOrderBy>>>;
   skip?: InputMaybe<Scalars['IntType']['input']>;
 };
 
@@ -2282,11 +2482,11 @@ export type QueryAllUploadsArgs = {
 
 
 /** The query root for this schema */
-export type QueryHomepageArgs = {
+export type QueryPageArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  filter?: InputMaybe<HomepageModelFilter>;
+  filter?: InputMaybe<PageModelFilter>;
   locale?: InputMaybe<SiteLocale>;
-  orderBy?: InputMaybe<Array<InputMaybe<HomepageModelOrderBy>>>;
+  orderBy?: InputMaybe<Array<InputMaybe<PageModelOrderBy>>>;
 };
 
 
@@ -2915,11 +3115,38 @@ export type ValuepropstripRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
   _updatedAt: Scalars['DateTime']['output'];
   id: Scalars['ItemId']['output'];
+  text: Array<ValueproptextRecord>;
 };
 
 
 /** Block of type ValuePropStrip (valuepropstrip) */
 export type ValuepropstripRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
+};
+
+/** Block of type ValuePropText (valueproptext) */
+export type ValueproptextRecord = RecordInterface & {
+  __typename?: 'ValueproptextRecord';
+  _createdAt: Scalars['DateTime']['output'];
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
+  _isValid: Scalars['BooleanType']['output'];
+  _modelApiKey: Scalars['String']['output'];
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>;
+  _status: ItemStatus;
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _updatedAt: Scalars['DateTime']['output'];
+  id: Scalars['ItemId']['output'];
+  text?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** Block of type ValuePropText (valueproptext) */
+export type ValueproptextRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
 };
 
@@ -2934,6 +3161,11 @@ export type FocalPoint = {
   x: Scalars['FloatType']['output'];
   y: Scalars['FloatType']['output'];
 };
+
+export type GetHomepageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetHomepageQuery = { __typename?: 'Query', page?: { __typename?: 'PageRecord', slug?: string | null, content: Array<{ __typename: 'AuthoritystripRecord', id: any, content: Array<{ __typename?: 'AuthoritystriptextRecord', text?: string | null, image?: { __typename?: 'FileField', url: string } | null }> } | { __typename: 'CarouselslidecontainerRecord', title?: string | null, slide: Array<{ __typename?: 'CarouselslideRecord', toptitle?: string | null, text?: string | null, maintitle?: string | null, ctaText?: string | null, ctaLink?: string | null, backgroundimage?: { __typename?: 'FileField', url: string } | null }> } | { __typename: 'CollectiongridRecord', id: any, ctaLink?: string | null, ctaText?: string | null, title?: string | null, collectiontile: Array<{ __typename?: 'CollectiontileRecord', link?: string | null, title?: string | null, image?: { __typename?: 'FileField', url: string, alt?: string | null } | null }> } | { __typename: 'HerobannerRecord', id: any, title?: string | null, toptitle?: string | null, ctatext?: string | null, ctaurl?: string | null, description?: string | null, bannerimage?: { __typename?: 'FileField', url: string } | null } | { __typename: 'ProductgridRecord', collectionHandle?: string | null, ctaLink?: string | null, ctaText?: string | null, limit?: any | null, title?: string | null } | { __typename: 'ValuepropstripRecord', id: any, text: Array<{ __typename?: 'ValueproptextRecord', text?: string | null }> }> } | null };
 
 export type TestQueryQueryVariables = Exact<{ [key: string]: never; }>;
 

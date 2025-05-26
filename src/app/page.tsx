@@ -1,4 +1,4 @@
-import { getTestQuery } from "@/lib/dato"
+import { getHomepageQuery } from "@/lib/dato/queries/getHomepage";
 import { getProducts } from "@/lib/shopify";
 
 import HeroBanner from "@/components/sections/HeroBanner";
@@ -13,46 +13,39 @@ import ProductFaq from "@/components/sections/ProductFaq";
 import LinkGrid from "@/components/sections/LinkGrid";
 import ReviewSlide from "@/components/sections/ReviewSlide";
 
-import CartTrigger from "@/components/cart/CartTrigger";
-import Button from "@/components/ui/Button";
-
-import Link from "next/link";
-import Image from 'next/image';
-
-
-// Example of how to conditionally load Shopify data:
-// const needsShopify = pageData.content.some(
-//   (block) => block.__typename === 'CollectionGridRecord'
-// );
-
-// const shopifyDataPromise = needsShopify
-//   ? fetchShopifyCollection(...)
-//   : Promise.resolve(null);
-
 
 export default async function Home() {
-  const data = await getTestQuery();
   const shopifyData = await getProducts();
-  console.log(data);
-  console.log(shopifyData);
+  const homepageData = await getHomepageQuery();
+
+  // const needsShopify = homepageData.page?.content.some(
+  //   (block) => block.__typename === 'ProductgridRecord'
+  // );
+
+  // const shopifyDataPromise = needsShopify
+  //   ? await getProducts()
+  //   : Promise.resolve(null);
 
   return (
     <>
-      {/* Example of doing a block loop from DatoCMS data: */}
-      {/* {pageData.content.map((block, index) => {
+      {homepageData.page?.content.map((block, index) => {
         switch (block.__typename) {
-          case 'HeroBannerRecord':
-            return <HeroBanner key={index} data={block} />;
-          case 'CollectionGridRecord':
-            return (
-              <CollectionGrid key={index} data={{ ...block, products: shopifyCollection }} />
-            );
-          default:
-            return null;
+          case "HerobannerRecord":
+            return <HeroBanner key={index} data={block} />
+          case "ValuepropstripRecord":
+            return <ValuePropStrip key={index} data={block} />
+          case "CollectiongridRecord":
+            return <CollectionGrid key={index} data={block} />
+          case "AuthoritystripRecord":
+            return <AuthorityBox key={index} data={block} />
+          case "ProductgridRecord":
+            return <ProductGrid key={index} shopifyData={shopifyData} data={block} />
+          case "CarouselslidecontainerRecord":
+            return <CarouselSlide key={index} data={block} />;
         }
-      })} */}
+      })}
       
-      <HeroBanner />
+      {/* <HeroBanner />
       <ValuePropStrip />
       <CollectionGrid />
       <AuthorityBox />
@@ -62,7 +55,7 @@ export default async function Home() {
       <IngredientsDropdown />
       <ReviewSlide />
       <ProductFaq />
-      <LinkGrid />
+      <LinkGrid /> */}
 
     </>
   );
