@@ -3,43 +3,14 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from "next/image";
-import Button from "../ui/Button";
 
-type Ingredients = {
-  title: string;
-  description: string;
-  imgSrc: string;
-};
+import { IngredientDropdownBlock } from '@/lib/dato/types';
 
-const ingredients: Ingredients[] = [
-  {
-    title: "Pea protein",
-    description: "This is pea protein, it's jolly nice, and I think you'll like it. This is pea protein, it's jolly nice, and I think you'll like it.",
-    imgSrc: "/images/placeholder.png"
-  },
-  {
-    title: "Pea protein",
-    description: "This is pea protein, it's jolly nice, and I think you'll like it.",
-    imgSrc: "/images/placeholder.png"
-  },
-  {
-    title: "Pea protein",
-    description: "This is pea protein, it's jolly nice, and I think you'll like it. This is pea protein, it's jolly nice, and I think you'll like it. This is pea protein, it's jolly nice, and I think you'll like it.",
-    imgSrc: "/images/placeholder.png"
-  },
-  {
-    title: "Pea protein",
-    description: "This is pea protein, it's jolly nice, and I think you'll like it.",
-    imgSrc: "/images/placeholder.png"
-  },
-  {
-    title: "Pea protein",
-    description: "This is pea protein, it's jolly nice, and I think you'll like it.",
-    imgSrc: "/images/placeholder.png"
-  }
-];
+type Props = {
+  data: IngredientDropdownBlock;
+}
 
-export default function IngredientsDropdown() {
+export default function IngredientsDropdown({ data }: Props) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggle = (index: number) => {
@@ -51,12 +22,12 @@ export default function IngredientsDropdown() {
       <div className="rounded-2xl flex overflow-hidden py-16">
         <div className="w-1/2">
           <div className="max-w-96">
-            <h1 className="font-heading-3xl mb-6">Made with the world’s most powerful superfood</h1>
-            <p className="font-body-lg mb-10">We carefully select nutrient-packed ingredients to support your whole body, from your muscles to your metabolism.</p>
+            <h1 className="font-heading-3xl mb-6">{data.title}</h1>
+            <p className="font-body-lg mb-10">{data.description}</p>
           </div>
         </div>
         <div className="w-1/2">
-          {ingredients.map((data, index) => (
+          {data.ingredient.map((block, index) => (
             <div key={index} className={`hover:bg-brand-grey border ${openIndex === index ? 'border-black' : 'border-gray-200'} hover:border-black rounded-2xl py-2 pl-2 pr-4 mb-3`}>
               <button
                 onClick={() => toggle(index)}
@@ -64,13 +35,13 @@ export default function IngredientsDropdown() {
               >
                 <div className="flex items-center gap-4">
                   <Image
-                    src={data.imgSrc}
+                    src={block.ingredientimage ? block.ingredientimage.url : "/images/placeholder.png"}
                     width={68}
                     height={68}
                     alt="icon"
                     className="rounded-full flex-shrink-0"
                   />
-                  <span className="text-lg font-medium">{data.title}</span>
+                  <span className="text-lg font-medium">{block.title}</span>
                 </div>
                 <span>
                   <Image src="/images/chevron.svg" width={22} height={22} alt="test" className={openIndex === index ? '-rotate-90' : 'rotate-90'} />
@@ -96,7 +67,7 @@ export default function IngredientsDropdown() {
                       className="pb-6 pt-4 pl-20 border-t border-black/20"
                     >
                       <p className="text-base">
-                        {data.description}
+                        {block.information}
                       </p>
                     </motion.div>
                   </motion.div>

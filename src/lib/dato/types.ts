@@ -9,3 +9,5 @@ export type CollectionTile = CollectionGridBlock["collectiontile"][number];
 export type AuthorityBlock = Extract<Block, { __typename: "AuthoritystripRecord" }>;
 export type ProductGridBlock = Extract<Block, { __typename: "ProductgridRecord" }>;
 export type CarouselSlideBlock = Extract<Block, { __typename: "CarouselslidecontainerRecord" }>;
+export type ImageBlockIconBlock = Extract<Block, { __typename: "ImageblockiconRecord" }>;
+export type IngredientDropdownBlock = Extract<Block, { __typename: "IngredientdropdownRecord" }>;

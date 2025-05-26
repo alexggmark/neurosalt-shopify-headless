@@ -447,6 +447,64 @@ export type HerobannerRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
 };
 
+/** Block of type ImageBlockIcon (imageblockicon) */
+export type ImageblockiconRecord = RecordInterface & {
+  __typename?: 'ImageblockiconRecord';
+  _createdAt: Scalars['DateTime']['output'];
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
+  _isValid: Scalars['BooleanType']['output'];
+  _modelApiKey: Scalars['String']['output'];
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>;
+  _status: ItemStatus;
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _updatedAt: Scalars['DateTime']['output'];
+  backgroundimage?: Maybe<FileField>;
+  ctaLink?: Maybe<Scalars['String']['output']>;
+  ctaText?: Maybe<Scalars['String']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  icon: Array<ImageblockiconpairRecord>;
+  id: Scalars['ItemId']['output'];
+  title?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** Block of type ImageBlockIcon (imageblockicon) */
+export type ImageblockiconRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
+};
+
+/** Block of type ImageBlockIconPair (imageblockiconpair) */
+export type ImageblockiconpairRecord = RecordInterface & {
+  __typename?: 'ImageblockiconpairRecord';
+  _createdAt: Scalars['DateTime']['output'];
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
+  _isValid: Scalars['BooleanType']['output'];
+  _modelApiKey: Scalars['String']['output'];
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>;
+  _status: ItemStatus;
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _updatedAt: Scalars['DateTime']['output'];
+  id: Scalars['ItemId']['output'];
+  image?: Maybe<FileField>;
+  title?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** Block of type ImageBlockIconPair (imageblockiconpair) */
+export type ImageblockiconpairRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
+};
+
 export type ImgixParams = {
   /**
    * Aspect Ratio
@@ -2247,6 +2305,62 @@ export type InUseFilter = {
   eq?: InputMaybe<Scalars['BooleanType']['input']>;
 };
 
+/** Block of type IngredientDropdown (ingredientdropdown) */
+export type IngredientdropdownRecord = RecordInterface & {
+  __typename?: 'IngredientdropdownRecord';
+  _createdAt: Scalars['DateTime']['output'];
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
+  _isValid: Scalars['BooleanType']['output'];
+  _modelApiKey: Scalars['String']['output'];
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>;
+  _status: ItemStatus;
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _updatedAt: Scalars['DateTime']['output'];
+  description?: Maybe<Scalars['String']['output']>;
+  id: Scalars['ItemId']['output'];
+  ingredient: Array<IngredientdropdownpairRecord>;
+  title?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** Block of type IngredientDropdown (ingredientdropdown) */
+export type IngredientdropdownRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
+};
+
+/** Block of type IngredientDropdownPair (ingredientdropdownpair) */
+export type IngredientdropdownpairRecord = RecordInterface & {
+  __typename?: 'IngredientdropdownpairRecord';
+  _createdAt: Scalars['DateTime']['output'];
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>;
+  _firstPublishedAt: Scalars['DateTime']['output'];
+  _isValid: Scalars['BooleanType']['output'];
+  _modelApiKey: Scalars['String']['output'];
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt: Scalars['DateTime']['output'];
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>;
+  _status: ItemStatus;
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _updatedAt: Scalars['DateTime']['output'];
+  id: Scalars['ItemId']['output'];
+  information?: Maybe<Scalars['String']['output']>;
+  ingredientimage?: Maybe<FileField>;
+  title?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** Block of type IngredientDropdownPair (ingredientdropdownpair) */
+export type IngredientdropdownpairRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
+};
+
 /** Specifies how to filter by ID */
 export type ItemIdFilter = {
   /** Search the record with the specified ID */
@@ -2279,7 +2393,7 @@ export type OrientationFilter = {
   neq?: InputMaybe<UploadOrientation>;
 };
 
-export type PageModelContentField = AuthoritystripRecord | CarouselslidecontainerRecord | CollectiongridRecord | HerobannerRecord | ProductgridRecord | ValuepropstripRecord;
+export type PageModelContentField = AuthoritystripRecord | CarouselslidecontainerRecord | CollectiongridRecord | HerobannerRecord | ImageblockiconRecord | IngredientdropdownRecord | ProductgridRecord | ValuepropstripRecord;
 
 export type PageModelFilter = {
   AND?: InputMaybe<Array<InputMaybe<PageModelFilter>>>;
@@ -3165,7 +3279,7 @@ export type FocalPoint = {
 export type GetHomepageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetHomepageQuery = { __typename?: 'Query', page?: { __typename?: 'PageRecord', slug?: string | null, content: Array<{ __typename: 'AuthoritystripRecord', id: any, content: Array<{ __typename?: 'AuthoritystriptextRecord', text?: string | null, image?: { __typename?: 'FileField', url: string } | null }> } | { __typename: 'CarouselslidecontainerRecord', title?: string | null, slide: Array<{ __typename?: 'CarouselslideRecord', toptitle?: string | null, text?: string | null, maintitle?: string | null, ctaText?: string | null, ctaLink?: string | null, backgroundimage?: { __typename?: 'FileField', url: string } | null }> } | { __typename: 'CollectiongridRecord', id: any, ctaLink?: string | null, ctaText?: string | null, title?: string | null, collectiontile: Array<{ __typename?: 'CollectiontileRecord', link?: string | null, title?: string | null, image?: { __typename?: 'FileField', url: string, alt?: string | null } | null }> } | { __typename: 'HerobannerRecord', id: any, title?: string | null, toptitle?: string | null, ctatext?: string | null, ctaurl?: string | null, description?: string | null, bannerimage?: { __typename?: 'FileField', url: string } | null } | { __typename: 'ProductgridRecord', collectionHandle?: string | null, ctaLink?: string | null, ctaText?: string | null, limit?: any | null, title?: string | null } | { __typename: 'ValuepropstripRecord', id: any, text: Array<{ __typename?: 'ValueproptextRecord', text?: string | null }> }> } | null };
+export type GetHomepageQuery = { __typename?: 'Query', page?: { __typename?: 'PageRecord', slug?: string | null, content: Array<{ __typename: 'AuthoritystripRecord', id: any, content: Array<{ __typename?: 'AuthoritystriptextRecord', text?: string | null, image?: { __typename?: 'FileField', url: string } | null }> } | { __typename: 'CarouselslidecontainerRecord', title?: string | null, slide: Array<{ __typename?: 'CarouselslideRecord', toptitle?: string | null, text?: string | null, maintitle?: string | null, ctaText?: string | null, ctaLink?: string | null, backgroundimage?: { __typename?: 'FileField', url: string } | null }> } | { __typename: 'CollectiongridRecord', id: any, ctaLink?: string | null, ctaText?: string | null, title?: string | null, collectiontile: Array<{ __typename?: 'CollectiontileRecord', link?: string | null, title?: string | null, image?: { __typename?: 'FileField', url: string, alt?: string | null } | null }> } | { __typename: 'HerobannerRecord', id: any, title?: string | null, toptitle?: string | null, ctatext?: string | null, ctaurl?: string | null, description?: string | null, bannerimage?: { __typename?: 'FileField', url: string } | null } | { __typename: 'ImageblockiconRecord', title?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, icon: Array<{ __typename?: 'ImageblockiconpairRecord', title?: string | null, image?: { __typename?: 'FileField', url: string } | null }>, backgroundimage?: { __typename?: 'FileField', url: string } | null } | { __typename: 'IngredientdropdownRecord', description?: string | null, title?: string | null, ingredient: Array<{ __typename?: 'IngredientdropdownpairRecord', information?: string | null, title?: string | null, ingredientimage?: { __typename?: 'FileField', url: string } | null }> } | { __typename: 'ProductgridRecord', collectionHandle?: string | null, ctaLink?: string | null, ctaText?: string | null, limit?: any | null, title?: string | null } | { __typename: 'ValuepropstripRecord', id: any, text: Array<{ __typename?: 'ValueproptextRecord', text?: string | null }> }> } | null };
 
 export type TestQueryQueryVariables = Exact<{ [key: string]: never; }>;
 

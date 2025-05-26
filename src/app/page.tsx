@@ -42,6 +42,10 @@ export default async function Home() {
             return <ProductGrid key={index} shopifyData={shopifyData} data={block} />
           case "CarouselslidecontainerRecord":
             return <CarouselSlide key={index} data={block} />;
+          case "ImageblockiconRecord":
+            return <ImageBlockIcons key={index} data={block} />;
+          case "IngredientdropdownRecord":
+            return <IngredientsDropdown key={index} data={block} />;
         }
       })}
       

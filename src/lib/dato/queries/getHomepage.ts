@@ -72,6 +72,34 @@ const query = gql`
           }
           title
         }
+        ... on ImageblockiconRecord {
+          __typename
+          title
+          description
+          ctaText
+          ctaLink
+          icon {
+            image {
+              url
+            }
+            title
+          }
+          backgroundimage {
+            url
+          }
+        }
+        ... on IngredientdropdownRecord {
+          __typename
+          description
+          title
+          ingredient {
+            information
+            title
+            ingredientimage {
+              url
+            }
+          }
+        }
       }
       slug
     }
