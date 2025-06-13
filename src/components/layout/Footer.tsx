@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="rounded-full overflow-hidden">
           <AnnouncementBar />
         </div>
-        <div className="grid grid-cols-12 text-white py-10 px-4">
+        <div className="grid grid-cols-12 text-white pt-10 pb-24 px-4">
           <div className="col-span-5 pr-12">
             <h3 className="font-heading-lg mb-4">Subscribe to get 10% OFF</h3>
             <p className="mb-8 text-base">Subscribe for store updates and discounts.</p>
