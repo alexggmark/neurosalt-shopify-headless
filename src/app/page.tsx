@@ -56,10 +56,10 @@ export default async function Home() {
       <ProductGrid data={shopifyData} />
       <CarouselSlide />
       <ImageBlockIcons />
-      <IngredientsDropdown />
+      <IngredientsDropdown />  */}
       <ReviewSlide />
       <ProductFaq />
-      <LinkGrid /> */}
+      <LinkGrid />
 
     </>
   );
